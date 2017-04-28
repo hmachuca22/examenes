@@ -1,0 +1,112 @@
+<?php
+/**
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @since         0.10.0
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ */
+
+$cakeDescription = 'CakePHP: the rapid development php framework';
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <?= $this->Html->charset() ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <?= $cakeDescription ?>:
+        <?= $this->fetch('title') ?>
+    </title>
+    <?= $this->Html->meta('icon') ?>
+
+    <?= $this->Html->css(['bootstrap','custom.min']) ?>
+    <?= $this->Html->script(['jquery-3.2.0.min','bootstrap.min','custom']) ?>
+    
+
+    <?= $this->fetch('meta') ?>
+    <?= $this->fetch('css') ?>
+    <?= $this->fetch('script') ?>
+
+</head>
+<body>
+    <?= $this->Flash->render() ?>
+<nav class="navbar navbar-fixed-top  navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">       
+      </button>    
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Sistema de Diagnostico de Examenes Medicos <span class="sr-only">(current)        
+        </span></a></li>        
+      </ul>     
+
+      <ul class="nav navbar-right">
+        <li><a href="#">
+          <?php echo $this->Html->image('micro.png', ['alt' => 'Examenes']) ?>
+        </a></li>
+      </ul>
+    </div>
+  </div>
+</nav>  
+<div class="row">
+<div class="col-sm-3">
+
+<i class="fa fa-list-alt" aria-hidden="true"></i>
+            <div class="list-group table-of-contents">
+            <?= $this->Html->link(__('Realizar Examen'), ['controller' => 'TbExamenes','action' => 'add'],['class'=>'list-group-item'])?>
+            <?= $this->Html->link(__('Listar Examenes'), ['controller' => 'TbExamenes','action' => 'index'],['class'=>'list-group-item'])?>
+            <?= $this->Html->link(__('Ingresar Tipos Examen'), ['controller' => 'TbTiposExamenes','action' => 'add'],['class'=>'list-group-item'])?>
+            <?= $this->Html->link(__('Listar Tipos de Examenes'), ['controller' => 'TbTiposExamenes','action' => 'index'],['class'=>'list-group-item'])?>
+            <?= $this->Html->link(__('Ingresar Usuarios'), ['controller' => 'TbUsuarios','action' => 'add'],['class'=>'list-group-item'])?>
+            <?= $this->Html->link(__('Listar Usuarios'), ['controller' => 'TbUsuarios','action' => 'index'],['class'=>'list-group-item'])?>                    
+            <?= $this->Html->link(__('Ingresar Reglas'), ['controller' => 'TbReglas','action' => 'add'],['class'=>'list-group-item'])?>                    
+            </div>
+          </div>
+<div class=" margin: 10px col-sm-8">
+<div class="jumbotron" >
+    <div class="classWithPad">
+      <?= $this->fetch('content') ?>
+    </div>
+</div>
+</div>  
+</div>
+  <footer>
+  <a href="#top" id ="backToTopBtn" class="well well-sm"><span class="glyphicon glyphicon-arrow-up"></span></a>
+  
+  </footer>
+</body>
+</html>
+
+<style type="text/css">
+    .jumbotron{
+    background-color:#FBFBFB;    
+    border-width: 1px;
+}
+
+
+.classWithPad { margin:25px; padding:10px; }
+
+.navbar-right {
+  padding: 0px;
+}
+.navbar-right img {
+  height: 10px;
+  padding: 5px;
+  width: auto;
+}
+
+
+
+</style>
+
+
+
